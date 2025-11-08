@@ -4,6 +4,7 @@
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+/* Dark Mode (Origin) */
 :root {
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -17,12 +18,13 @@
   --bg-gray-900: #364153;
   --bg-black: #000;
   --bg-white: #fff;
-  --my-text-white: #fff; 
+  --my-text-white: #fff;
   --my-bg-black: #000;
 }
 
+/* Light Mode */
 :root:has(input:checked) {
-  --bg-black-blue:#FFF;
+  --bg-black-blue: #fff;
   --text-black-blue: #4b4949;
   --my-text-white: #000;
   --bg-white: #0b0e13;
@@ -40,6 +42,19 @@
   }
   .image-overlay {
     background-image: linear-gradient(to top, #78828aa8, transparent);
+  }
+  .moving-images .container {
+    background: radial-gradient(
+      circle,
+      rgba(120, 130, 138, 0.9) 0%,
+      rgba(255, 255, 255, 0.4) 70%
+    );
+  }
+  .join-our-comunity {
+    background-image: linear-gradient(to left, #78828a, #a1a9b8);
+  }
+  .join-our-comunity span:hover {
+    background-color: #d1d5db;
   }
 }
 
@@ -59,7 +74,7 @@
 .toggle-btn .circle {
   width: 24px;
   height: 24px;
-  background-color:#0c131d;
+  background-color: #0c131d;
   border-radius: 50%;
   position: absolute;
   left: 3px;
@@ -224,7 +239,7 @@
 }
 
 .navbar-nav .nav-link.active {
-    color: var(--text-limon-yellow) ;
+  color: var(--text-limon-yellow);
 }
 
 /********** Header *************/
@@ -555,7 +570,7 @@
 }
 
 .join-our-comunity .icons span i {
-  color: #cbfe1c;
+  color: var(--text-limon-yellow);
 }
 
 /********* Form *********/
