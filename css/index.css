@@ -1,0 +1,581 @@
+/************ Variables and general common styles ****************/
+
+* {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+:root {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  --bg-black-blue: #0b0e13;
+  --text-black-blue: #0e131c;
+  --bg-limon-yellow: #cbfe1c;
+  --text-limon-yellow: #cbfe1c;
+  --text-light-gray: #b9bcc2;
+  --bg-light-blue: #0e131e;
+  --bg-gray-800: #1e2939;
+  --bg-gray-900: #364153;
+  --bg-black: #000;
+  --bg-white: #fff;
+  --my-text-white: #fff; 
+  --my-bg-black: #000;
+}
+
+:root:has(input:checked) {
+  --bg-black-blue:#FFF;
+  --text-black-blue: #4b4949;
+  --my-text-white: #000;
+  --bg-white: #0b0e13;
+  --bg-limon-yellow: #78828a;
+  --text-limon-yellow: #78828a;
+  --text-light-gray: #3f5464;
+  --bg-light-blue: #28292a56;
+  --bg-gray-800: #d1d5db;
+  --bg-gray-900: #a1a9b8;
+  --my-text-white: #000;
+  --my-bg-black: #fff;
+  .header {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.414)),
+      url(../Images/hero-bg.jpg);
+  }
+  .image-overlay {
+    background-image: linear-gradient(to top, #78828aa8, transparent);
+  }
+}
+
+/* Toggle Button Styling */
+.toggle-btn {
+  width: 60px;
+  height: 30px;
+  background-color: #1e2939;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.toggle-btn .circle {
+  width: 24px;
+  height: 24px;
+  background-color:#0c131d;
+  border-radius: 50%;
+  position: absolute;
+  left: 3px;
+  transition: all 0.3s;
+}
+
+/* When checkbox checked */
+#modeToggle:checked + .toggle-btn {
+  background-color: #ccc;
+}
+
+#modeToggle:checked + .toggle-btn .circle {
+  transform: translateX(30px);
+  background-color: #fff;
+}
+
+/****** Fonts family *******/
+.days-one {
+  font-family: "Days One", sans-serif;
+}
+
+.chakra-petch {
+  font-family: "Chakra Petch", sans-serif;
+}
+
+/****** Text and bg colors *******/
+.text-limon-yellow {
+  color: var(--text-limon-yellow);
+}
+
+.bg-limon-yellow {
+  background-color: var(--bg-limon-yellow);
+}
+
+.bg-black-blue {
+  background-color: var(--bg-black-blue);
+}
+
+.text-black-blue {
+  color: var(--text-black-blue);
+}
+
+.text-light-gray {
+  color: var(--text-light-gray);
+}
+
+.bg-light-blue {
+  background-color: var(--bg-light-blue);
+}
+
+.bg-gray-800 {
+  background-color: var(--bg-gray-800);
+}
+
+.bg-gray-900 {
+  background-color: var(--bg-gray-900);
+}
+
+.my-text-white {
+  color: var(--my-text-white);
+}
+
+.my-bg-black {
+  background-color: var(--my-bg-black);
+}
+
+/******* Borders *********/
+.border-limon-yellow {
+  border: 5px solid var(--bg-limon-yellow);
+}
+
+.text-hover-limon-yellow {
+  transition: color 0.3s ease;
+}
+
+/******* Hover's Effects */
+
+:target {
+  scroll-margin-top: 150px;
+}
+
+.text-hover-limon-yellow:hover {
+  color: var(--text-limon-yellow) !important;
+}
+
+.bg-hover-limon-yellow {
+  transition: color 0.3s ease;
+}
+
+.bg-hover-limon-yellow:hover {
+  background-color: var(--bg-limon-yellow) !important;
+}
+
+.border-hover-limon-yellow {
+  transition: border 0.3s ease;
+}
+
+.border-hover-limon-yellow:hover {
+  border: 2px solid var(--bg-limon-yellow) !important;
+}
+
+.text-hover-dark {
+  transition: color 0.3s ease;
+}
+
+.text-hover-dark:hover {
+  color: var(--text-black-blue);
+  font-weight: bold;
+}
+
+.flash-light-hover-effect {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition: transform 0.2s ease;
+}
+
+.flash-light-hover-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 30%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: skewX(-25deg);
+  transition: 0.7s;
+  z-index: 1;
+}
+
+.flash-light-hover-effect:hover::before {
+  left: 130%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.header:hover #home,
+.our-games:hover #our-games,
+.what-we-do:hover #what-we-do {
+  color: var(--text-limon-yellow);
+}
+
+/************* Navbar *************/
+
+.navbar .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: var(--bg-limon-yellow);
+  transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar {
+  border-bottom: 1px solid oklch(27.8% 0.033 256.848);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--text-limon-yellow) ;
+}
+
+/********** Header *************/
+
+.header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8)),
+    url(../Images/hero-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 50px;
+}
+
+.image-footer {
+  bottom: 0;
+  left: 0;
+  transform: translate(-30px, 20px);
+  border: 1px solid gray;
+  background-color: #0b0e13;
+}
+
+/******** Our Games ********/
+
+.after-before-common-effect::before,
+.after-before-common-effect::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 3px;
+  transform: translateY(-50%);
+  background-image: linear-gradient(
+    to left,
+    var(--bg-limon-yellow),
+    transparent
+  );
+}
+
+.after-before-common-effect::after {
+  right: -55px;
+  background-image: linear-gradient(
+    to right,
+    var(--bg-limon-yellow),
+    transparent
+  );
+}
+
+.after-before-common-effect::before {
+  left: -55px;
+}
+
+#multiItemCarousel {
+  position: relative;
+}
+
+.carousel-controls-below {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.custom-btn {
+  background-color: transparent;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid ghostwhite;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  border: 2px solid var(--bg-limon-yellow);
+}
+
+.custom-btn:hover .arrow {
+  color: var(--text-limon-yellow);
+}
+
+.our-team-image img {
+  border: none;
+  transform: all 0.3s ease;
+}
+
+.our-team-image:hover {
+  border: 2px solid var(--bg-limon-yellow);
+  cursor: pointer;
+}
+
+.our-team-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.our-team-image img {
+  transition: all 0.4s ease;
+}
+
+.our-team-image:hover img {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-image: linear-gradient(to top, #c9fe1ce2, transparent);
+  transition: height 0.3s ease;
+}
+
+.our-team-image:hover .image-overlay {
+  height: 50%;
+}
+
+.text-bottom-drop {
+  color: #000;
+  bottom: -70px;
+  left: 10px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.our-team-image:hover .text-bottom-drop {
+  bottom: 20px;
+  opacity: 1;
+}
+
+.text-top-drop {
+  position: absolute;
+  top: -70px;
+  left: 10px;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.our-team-image:hover .text-top-drop {
+  top: 20px;
+  opacity: 1;
+}
+
+.bg-black-50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.our-games-button {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.our-games-button button {
+  border: 2px solid var(--bg-limon-yellow);
+  font-size: 0.75rem;
+}
+
+/*********** Waht We Do **********/
+
+.what-we-do .container .all-cards .card {
+  background-color: var(--bg-light-blue);
+  border: 2px solid rgb(4, 4, 58);
+}
+
+.what-we-do .container .all-cards .card .inner .icon {
+  width: 50px;
+  height: 50px;
+  padding: 20px;
+  background-color: #1e2939;
+  transform: all 0.3 ease;
+}
+
+.what-we-do .container .all-cards .card:hover .icon {
+  background-color: var(--bg-limon-yellow);
+}
+
+.what-we-do .container .all-cards .card:hover .icon i {
+  color: var(--text-black-blue);
+}
+
+.triangle-top-left,
+.triangle-bottom-right {
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.triangle-top-left {
+  border-top: 20px solid var(--bg-limon-yellow);
+  border-right: 20px solid transparent;
+  top: -20px;
+  left: -20px;
+}
+
+.triangle-bottom-right {
+  border-bottom: 20px solid var(--bg-limon-yellow);
+  border-left: 20px solid transparent;
+  bottom: -20px;
+  right: -20px;
+}
+
+.what-we-do .container .all-cards .card:hover .triangle-top-left {
+  top: 10px;
+  left: 10px;
+  opacity: 1;
+}
+
+.what-we-do .container .all-cards .card:hover .triangle-bottom-right {
+  bottom: 10px;
+  right: 10px;
+  opacity: 1;
+}
+
+.all-cards .card {
+  flex: 1;
+}
+
+/*************** Moving Images ***************/
+
+.line {
+  width: 60%;
+  height: 2px;
+  margin: auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--text-limon-yellow) 20%,
+    var(--text-limon-yellow) 80%,
+    transparent
+  );
+  box-shadow: 0 0 10px var(--text-limon-yellow), 0 0 20px #cbfe1c4d;
+  border-radius: 10px;
+}
+
+.moving-images .container {
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(180, 255, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+
+.moving-images .container .all-cards-top {
+  animation: slider-top 30s linear infinite;
+  -webkit-animation: slider-top 30s linear infinite;
+}
+
+@keyframes slider-top {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.moving-images .container .all-cards-bottom {
+  animation: slider-bottom 30s linear infinite;
+  -webkit-animation: slider-bottom 30s linear infinite;
+}
+
+@keyframes slider-bottom {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/********* Our Team *********/
+
+.photo::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.5s;
+  backdrop-filter: sepia(0.8) brightness(0.8);
+}
+
+.photo:hover::before {
+  height: 0;
+}
+
+.photo .photo-text * {
+  color: #fff;
+  transition: color 0.5s ease;
+  position: relative;
+}
+
+.photo:hover .photo-text h6,
+.photo:hover .photo-text h4 {
+  color: #d9ff00;
+}
+
+.photo-text {
+  bottom: 0;
+  left: 20px;
+}
+
+.rotated-word {
+  right: -20px;
+  bottom: 30px;
+}
+
+/********* Contact Us *********/
+
+.join-our-comunity {
+  background-image: linear-gradient(to left, #05d46e, #c8fa1c);
+}
+
+.join-our-comunity .icons span {
+  background-color: #0b0e13;
+  transition: all 0.3s;
+}
+
+.join-our-comunity .icons span:hover {
+  background-color: #273b1f;
+}
+
+.join-our-comunity .icons span i {
+  color: #cbfe1c;
+}
+
+/********* Form *********/
+
+input,
+select,
+textarea {
+  border: 1px solid rgba(255, 255, 255, 0.082);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border: 3px solid var(--text-limon-yellow);
+  outline: none;
+  caret-color: #fff;
+}
+
+/********* Footer *********/
+
+.footer-line {
+  border: 1px solid oklch(27.8% 0.033 256.848);
+}
